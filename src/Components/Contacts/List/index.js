@@ -14,13 +14,13 @@ function List({ contacts }) {
 
   return (
     <div>
-      <h2>Telefon Rehberi</h2>
       <input
+        className="filterInput"
         placeholder="Rehberde Ara"
         value={filterText}
         onChange={(e) => setfilterText(e.target.value)}
       />
-      <ul>
+      <ul className="list">
         {filtered.map((contact, index) => (
           <li key={index}>
             {contact.fullname} -
@@ -30,6 +30,7 @@ function List({ contacts }) {
           </li>
         ))}
       </ul>
+      <p>Toplam Kayıt ({filtered.length})</p>
     </div>
   );
 }
