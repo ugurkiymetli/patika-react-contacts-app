@@ -15,16 +15,18 @@ function Form({ addContact, contacts }) {
   useEffect(() => {
     console.log("Form Component Mounted!");
   }, []);
+
   // forma veri girdiğinde stateler güncelleniyor.
   const onFormChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
+
   //veriyi contacts'e ekliyoruz
   //eğer boş ise false dönüyor.
   const onSubmit = (e) => {
     e.preventDefault();
     if (form.fullname === "" || form.phone_number === "") {
-      console.log("isim veya telefon numarası boş olamaz.");
+      console.log("name or phone number cannot be empty.");
       return false;
     }
     //önceki datayı tutup üzerine ekledik.
@@ -36,7 +38,7 @@ function Form({ addContact, contacts }) {
       <div>
         <input
           name="fullname"
-          placeholder="İsim Soyisim"
+          placeholder="Name"
           value={form.fullname}
           onChange={onFormChange}
         />
@@ -44,13 +46,13 @@ function Form({ addContact, contacts }) {
       <div>
         <input
           name="phone_number"
-          placeholder="Telefon Numarası"
+          placeholder="Phone Number"
           value={form.phone_number}
           onChange={onFormChange}
         />
       </div>
       <div>
-        <button>Rehbere Ekle</button>
+        <button>Add Contact</button>
       </div>
     </form>
   );

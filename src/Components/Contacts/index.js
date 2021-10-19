@@ -71,7 +71,7 @@ function Contacts() {
   }, [contacts]);
   return (
     <div id="container">
-      <h2>Telefon Rehberi</h2>
+      <h2>Contacts App</h2>
       <List contacts={contacts} />
       <Form addContact={setContacts} contacts={contacts} />
     </div>
